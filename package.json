@@ -4,7 +4,8 @@
   "private": true,
   "main": "server.js",
   "devDependencies": {
-    "react": "^15.4.2"
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -15,13 +16,12 @@
     "mongoose": "^4.8.1",
     "nodemon": "^1.11.0",
     "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.2",
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"
   },
   "scripts": {
      "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
-     "start": "node app.js"
+     "start": "node server.js"
   }
 }
