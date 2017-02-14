@@ -188,6 +188,6 @@ router.route('/lodges')
 app.use('/api', router);
 
 //starts the server and listens for requests
-app.listen(port, function() {
+app.listen(port, '0.0.0.0', function() {
  console.log(`api running on port ${port}`);
 });
