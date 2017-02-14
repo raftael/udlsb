@@ -14,7 +14,8 @@ var router = express.Router();
 //set our port to either a predetermined port number if you have set 
 //it up, or 3001
 var port = process.env.API_PORT || 3001;
-var mongo_url = 'mongodb://localhost:27017/mern-starter';
+//var mongo_url = 'mongodb://localhost:27017/mern-starter';
+var mongo_url = 'mongodb://udlsb_app:udlsb2017@ds151289.mlab.com:51289/heroku_6tjgt15x'
 
 //db config -- REPLACE USERNAME/PASSWORD WITH YOUR OWN FROM MLAB!
 mongoose.connect(mongo_url, (error) => {

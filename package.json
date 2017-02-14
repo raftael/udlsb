@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.8.5",
-    "main": "server.js"
+    "react-scripts": "0.8.5"
   },
   "dependencies": {
     "axios": "^0.15.3",
