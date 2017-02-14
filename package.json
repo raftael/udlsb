@@ -4,7 +4,7 @@
   "private": true,
   "main": "server.js",
   "devDependencies": {
-    "react": "^15.4.2",
+    "react": "^15.4.2"
   },
   "dependencies": {
     "axios": "^0.15.3",
