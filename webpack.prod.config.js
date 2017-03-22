@@ -5,7 +5,8 @@ module.exports = {
   devtool: 'source-map',
 
   entry: [
-    'babel-polyfill', __dirname + "./src/index"
+    './src/index'
+    //'babel-polyfill', __dirname + "./src/index"
   ],
 
   output: {
@@ -22,6 +23,7 @@ module.exports = {
         warnings: false
       }
     }),
+    
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
@@ -29,23 +31,27 @@ module.exports = {
     })
   ],
 
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+
   module: {
     loaders: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        include: path.join(__dirname, 'src') },
       { test: /\.js?$/,
         loader: 'babel',
-        exclude: /node_modules/,
-        
-       },
+        exclude: /node_modules/ },
       { test: /\.scss?$/,
         loader: 'style!css!sass',
-        include: path.join(__dirname, 'src', 'styles') },
+        include: path.join(__dirname, 'src', 'style') },
       { test: /\.png$/,
         loader: 'file' },
       { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
         loader: 'file'}
     ]
   },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  }
+  
 }

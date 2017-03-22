@@ -50,6 +50,21 @@ router.get('/', function(req, res) {
  res.json({ message: 'API Initialized!'});
 });
 
+
+/// react app
+var static_path = path.join(__dirname, 'public');
+
+app.use(express.static(static_path))
+  .get('/', function(req, res){
+    res.sendFile('index.html',{
+      root: static_path
+    });
+  }).listen(process.env.PORT || 5000, function(err){
+    if(err){ console.log(err) }
+    console.log('Listening at localhost:5000');
+  });
+
+
 //// SERVICES
 
 //adding the /services route to our /api router
