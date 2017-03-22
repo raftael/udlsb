@@ -42,9 +42,9 @@ class App extends Component {
             </Navbar.Collapse>
          </Navbar>
 
-        {this.state.activeKey === 1 ? <ServiceBox url='http://localhost:3001/api/services' pollInterval={50000} /> : null }
-        {this.state.activeKey === 2 ? <ItemBox url='http://localhost:3001/api/items' pollInterval={50000} /> : null }
-        {this.state.activeKey === 3 ? <PostBox url='http://localhost:3001/api/lodges' pollInterval={50000} /> : null }
+        {this.state.activeKey === 1 ? <ServiceBox url='https://udlsb.herokuapp.com/api/services' pollInterval={50000} /> : null }
+        {this.state.activeKey === 2 ? <ItemBox url='https://udlsb.herokuapp.com/api/items' pollInterval={50000} /> : null }
+        {this.state.activeKey === 3 ? <PostBox url='https://udlsb.herokuapp.com/api/lodges' pollInterval={50000} /> : null }
       </div>
     );
   }
