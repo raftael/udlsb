@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var Service = require('./model/services');
 var Lodge = require('./model/lodges');
 var Item = require('./model/items');
+var User = require('./model/users');
 //and create our instances
 var app = express();
 var router = express.Router();
@@ -67,6 +68,25 @@ app.use(express.static(static_path))
 
 //// SERVICES
 
+// login
+router.route('/login')
+    //login 
+    .post(function(req, res) {
+        User.findOne({user:req.body.user}, function(err, userObj){
+          if(err){
+            console.log(err);
+            res.send(err);
+          }else{
+            if(userObj != null && userObj.pass === req.body.pass)
+            {res.json(true);}
+          else
+            {res.json(false)}
+          }
+        });
+ });
+
+
+
 //adding the /services route to our /api router
 router.route('/services')
     //retrieve all services from the database
@@ -81,7 +101,7 @@ router.route('/services')
     })
     //post new service to the database
     .post(function(req, res) {
-        var service = new Service();
+        var service = new User();
         //body parser lets us use the req.body
         service.title = req.body.title;
         service.description = req.body.description;
